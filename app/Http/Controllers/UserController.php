@@ -15,6 +15,11 @@ class UserController extends Controller
 
     public function registro(Request $request)
     {
+        $request->validate([
+            'usuario'=> 'required|unique',
+            'contraseña'=>'required'
+        ]);
+        
         $input = $request->all();
 
         $input['contraseña'] = Hash::make($request->contraseña);
