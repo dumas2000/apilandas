@@ -11,7 +11,7 @@ Route::post('login', [UserController::class,'login']);
 
 Route::group(['middleware'=>'auth:api'], function(){
     Route::apiResource('rol',RolController::class);
-    Route::post('persona/crear',[PersonaController::class, 'store']);
+    Route::apiResource('persona',PersonaController::class);
     Route::apiResource('trabajador',TrabajadorController::class);
     Route::post('registro', [UserController::class,'registro']);
 });
