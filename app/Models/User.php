@@ -19,7 +19,7 @@ class User extends Authenticatable
         'usuario',
         'contraseña',
         'api_token'
-    ];
+    ]; 
 
     protected $hidden = [
         'contraseña',

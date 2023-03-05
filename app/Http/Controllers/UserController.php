@@ -72,5 +72,26 @@ class UserController extends Controller
         }
     }
 
+    public function logout($api_token)
+    {
+        $user = \App\Models\User::where('api_token', $api_token)->first();
+
+        if ($user instanceof User) {
+            $user->api_token = null;
+            $user->save();
+            return response()->json([
+                'res' => true,
+                'message' => 'Logout exitoso'
+            ], 200);
+        }else{
+            return response()->json([
+                'res' => true,
+                'message' => 'ERROR'
+            ], 404);
+        }
+        
+    }
+
+
 
 }

@@ -13,7 +13,7 @@ class Persona extends Model
 
     protected $primaryKey = 'dni_persona';
 
-    protected $fillable = ['nombres','apellidos','celular','direccion'];
+    protected $fillable = ['dni_persona','nombres','apellidos','celular','direccion'];
 
     public function trabajadores(){
         return $this->hasMany(Trabajador::class,'dni_persona');

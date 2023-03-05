@@ -17,8 +17,8 @@ class UsuarioSeeder extends Seeder
         DB::table('usuarios')->insert(
             [
                 'id_trabajador'=>'1',
-                'usuario'=>'EzioDiamonds',
-                'contraseña'=> Hash::make('ucv123'),
+                'usuario'=>'abc',
+                'contraseña'=> Hash::make('123'),
             ]
         );
     }
